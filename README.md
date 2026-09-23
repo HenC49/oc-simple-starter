@@ -8,8 +8,8 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Python](https://img.shields.io/badge/python-3.8%2B-blue.svg)](pyproject.toml)
-[![CI](https://github.com/huangchen/oc-simple-starter/actions/workflows/ci.yml/badge.svg)](https://github.com/huangchen/oc-simple-starter/actions/workflows/ci.yml)
-[![Release](https://img.shields.io/github/v/release/huangchen/oc-simple-starter)](https://github.com/huangchen/oc-simple-starter/releases)
+[![CI](https://github.com/HenC49/oc-simple-starter/actions/workflows/ci.yml/badge.svg)](https://github.com/HenC49/oc-simple-starter/actions/workflows/ci.yml)
+[![Release](https://img.shields.io/github/v/release/HenC49/oc-simple-starter)](https://github.com/HenC49/oc-simple-starter/releases)
 
 纯 Python 标准库实现，单文件，零第三方依赖。
 

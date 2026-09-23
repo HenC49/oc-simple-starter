@@ -3,13 +3,12 @@
 #
 # 用法:
 #   从仓库根目录安装:   ./install.sh
-#   远程一键安装:       curl -fsSL https://raw.githubusercontent.com/huangchen/oc-simple-starter/main/install.sh | bash
+#   远程一键安装:       curl -fsSL https://raw.githubusercontent.com/HenC49/oc-simple-starter/refs/heads/main/install.sh | bash
 #   自定义前缀:         PREFIX=~/.local ./install.sh
 #   卸载:               ./install.sh --uninstall
 set -euo pipefail
 
-# TODO: 项目迁移后改成实际 owner/仓库名
-REPO_RAW="https://raw.githubusercontent.com/huangchen/oc-simple-starter/main"
+REPO_RAW="https://raw.githubusercontent.com/HenC49/oc-simple-starter/refs/heads/main"
 PREFIX="${PREFIX:-$HOME/.local}"
 LIB_DIR="$PREFIX/share/oc-simple-starter"
 BIN_DIR="$PREFIX/bin"

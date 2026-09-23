@@ -124,7 +124,9 @@ ls -lh dist/
 if [ "$PUBLISH" = 1 ]; then
   command -v gh >/dev/null 2>&1 || die "--publish 需要 gh CLI (https://cli.github.com), 或手动: git push origin main --follow-tags 后在 GitHub Releases 页面上传 dist/"
   say "推送到远端并创建 GitHub Release"
-  git remote get-url origin >/dev/null 2>&1 || die "未配置 origin 远端 (git remote add origin git@github.com:<owner>/oc-simple-starter.git)"
+  # 未配置远端时按本项目地址自动添加
+  git remote get-url origin >/dev/null 2>&1 || \
+    git remote add origin https://github.com/HenC49/oc-simple-starter.git
   git push origin HEAD --follow-tags
   NOTES="$(mktemp)"
   trap 'rm -f "$NOTES"' EXIT
