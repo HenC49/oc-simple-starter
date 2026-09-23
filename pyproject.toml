@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "oc-simple"
+description = "OpenCode 简易启动器: 系统文件选择器新建 session, 跨项目搜索并恢复历史 session"
+readme = "README.md"
+requires-python = ">=3.8"
+license = { text = "MIT" }
+authors = [{ name = "huangchen" }]
+keywords = ["opencode", "launcher", "tui", "cli", "session"]
+classifiers = [
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: MacOS",
+    "Operating System :: POSIX :: Linux",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Topic :: Software Development",
+    "Topic :: Utilities",
+]
+# 版本号由 ocs.py 的 __version__ 单一来源提供, 发布脚本只改 ocs.py
+dynamic = ["version"]
+
+[project.urls]
+Homepage = "https://github.com/huangchen/oc-simple"
+Changelog = "https://github.com/huangchen/oc-simple/blob/main/CHANGELOG.md"
+
+[project.scripts]
+ocs = "ocs:main"
+
+[tool.setuptools]
+py-modules = ["ocs"]
+
+[tool.setuptools.dynamic]
+version = { attr = "ocs.__version__" }
