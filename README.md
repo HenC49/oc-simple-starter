@@ -40,14 +40,14 @@
 
 ```bash
 # 方式一: 一键脚本 (macOS / Linux)
-curl -fsSL https://raw.githubusercontent.com/huangchen/oc-simple-starter/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/HenC49/oc-simple-starter/refs/heads/main/install.sh | bash
 
 # 方式二: 从源码
-git clone https://github.com/huangchen/oc-simple-starter.git
+git clone https://github.com/HenC49/oc-simple-starter.git
 cd oc-simple-starter && ./install.sh
 
 # 方式三: pipx (依赖 pyproject.toml, 自动创建隔离环境)
-pipx install git+https://github.com/huangchen/oc-simple-starter.git
+pipx install git+https://github.com/HenC49/oc-simple-starter.git
 ```
 
 要求：Python ≥ 3.8、已安装 [OpenCode v2](https://opencode.ai)（`opencode --version` ≥ 2.x）。

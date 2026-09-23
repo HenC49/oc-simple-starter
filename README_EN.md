@@ -44,14 +44,14 @@ the one you pick.
 
 ```bash
 # Option 1: one-liner (macOS / Linux)
-curl -fsSL https://raw.githubusercontent.com/huangchen/oc-simple-starter/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/HenC49/oc-simple-starter/refs/heads/main/install.sh | bash
 
 # Option 2: from source
-git clone https://github.com/huangchen/oc-simple-starter.git
+git clone https://github.com/HenC49/oc-simple-starter.git
 cd oc-simple-starter && ./install.sh
 
 # Option 3: pipx
-pipx install git+https://github.com/huangchen/oc-simple-starter.git
+pipx install git+https://github.com/HenC49/oc-simple-starter.git
 ```
 
 Requires Python ≥ 3.8 and [OpenCode v2](https://opencode.ai) (`opencode --version` ≥ 2.x).
