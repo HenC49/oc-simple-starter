@@ -1,3 +1,3 @@
 #!/bin/sh
-# oc-simple 启动包装: 软链到 PATH 后即可使用 `ocs` 命令
+# oc-simple-starter 启动包装: 软链到 PATH 后即可使用 `ocs` 命令
 exec python3 "$(dirname "$0")/../ocs.py" "$@"

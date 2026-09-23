@@ -1,6 +1,6 @@
 <div align="center">
 
-# oc-simple
+# oc-simple-starter
 
 **A simple launcher for OpenCode — start sessions via the native folder picker, search & resume sessions across projects**
 
@@ -8,8 +8,8 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Python](https://img.shields.io/badge/python-3.8%2B-blue.svg)](pyproject.toml)
-[![CI](https://github.com/huangchen/oc-simple/actions/workflows/ci.yml/badge.svg)](https://github.com/huangchen/oc-simple/actions/workflows/ci.yml)
-[![Release](https://img.shields.io/github/v/release/huangchen/oc-simple)](https://github.com/huangchen/oc-simple/releases)
+[![CI](https://github.com/huangchen/oc-simple-starter/actions/workflows/ci.yml/badge.svg)](https://github.com/huangchen/oc-simple-starter/actions/workflows/ci.yml)
+[![Release](https://img.shields.io/github/v/release/huangchen/oc-simple-starter)](https://github.com/huangchen/oc-simple-starter/releases)
 
 Single file, Python standard library only, zero third-party dependencies.
 
@@ -44,14 +44,14 @@ the one you pick.
 
 ```bash
 # Option 1: one-liner (macOS / Linux)
-curl -fsSL https://raw.githubusercontent.com/huangchen/oc-simple/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/huangchen/oc-simple-starter/main/install.sh | bash
 
 # Option 2: from source
-git clone https://github.com/huangchen/oc-simple.git
-cd oc-simple && ./install.sh
+git clone https://github.com/huangchen/oc-simple-starter.git
+cd oc-simple-starter && ./install.sh
 
 # Option 3: pipx
-pipx install git+https://github.com/huangchen/oc-simple.git
+pipx install git+https://github.com/huangchen/oc-simple-starter.git
 ```
 
 Requires Python ≥ 3.8 and [OpenCode v2](https://opencode.ai) (`opencode --version` ≥ 2.x).
@@ -64,7 +64,7 @@ ocs          # interactive UI
 ```
 
 ```
- OpenCode Launcher (oc-simple)
+ OpenCode Launcher (oc-simple-starter)
    ◆ New session      — pick a working directory
    ↺ Resume session   — search and enter past sessions
  ↑↓/jk select  Enter confirm  Esc quit   |   12 sessions
@@ -103,7 +103,7 @@ ocs --version
   **read-only** mode, merges `session_v2` with the legacy `session` table (dedup by id),
   excludes child and archived sessions — the same scope OpenCode itself lists; nothing
   is ever written to OpenCode's data
-- The only local state is `~/.config/oc-simple/state.json` (last working directory)
+- The only local state is `~/.config/oc-simple-starter/state.json` (last working directory)
 - Launching replaces the current process (`execvp`), so the terminal is clean after you
   quit opencode
 

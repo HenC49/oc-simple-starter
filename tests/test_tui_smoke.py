@@ -180,7 +180,7 @@ class Smoke(unittest.TestCase):
 
     def test_menu_screen(self):
         s = self.make()
-        s.assert_screen(["OpenCode 启动器 (oc-simple)", "新建 session", "恢复 session",
+        s.assert_screen(["OpenCode 启动器 (oc-simple-starter)", "新建 session", "恢复 session",
                          "共 2 个 session", "Esc 退出"])
 
     def test_new_session_flow(self):
@@ -212,7 +212,7 @@ class Smoke(unittest.TestCase):
         s.send("\x1b[B")
         s.send("\r")       # 进浏览器
         s.send("\x1b")     # 返回主菜单
-        s.assert_screen("OpenCode 启动器 (oc-simple)")
+        s.assert_screen("OpenCode 启动器 (oc-simple-starter)")
         s.send("\x1b")     # 退出
         s.assert_screen("再见。")
 

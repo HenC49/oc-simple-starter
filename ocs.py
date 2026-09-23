@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""oc-simple (ocs) — OpenCode 简易启动器.
+"""oc-simple-starter (ocs) — OpenCode 简易启动器.
 
 功能:
   1. 新建 session: 调起系统文件选择器选择工作目录, 然后在该目录启动 opencode
@@ -31,7 +31,7 @@ from datetime import datetime
 
 DEFAULT_DB = os.path.expanduser("~/.local/share/opencode/opencode.db")
 STATE_DIR = os.path.join(os.environ.get("XDG_CONFIG_HOME", os.path.expanduser("~/.config")),
-                         "oc-simple")
+                         "oc-simple-starter")
 DRY_RUN = bool(os.environ.get("OC_SIMPLE_DRY_RUN"))
 # None=未设置; ""=模拟用户取消; 非空=模拟选择该目录
 FAKE_PICKER = os.environ.get("OC_SIMPLE_FAKE_PICKER")
@@ -394,9 +394,9 @@ def main_menu(scr, sessions):
             ("new session 新建", "new"),
             ("resume 恢复 session", "resume"),
         ]
-        footer = "↑↓/jk 选择  Enter 确认  Esc 退出   |   共 %d 个 session   |   新建: oc-simple" % count
+        footer = "↑↓/jk 选择  Enter 确认  Esc 退出   |   共 %d 个 session   |   新建: oc-simple-starter" % count
         choice, cancelled = pick(
-            scr, "OpenCode 启动器 (oc-simple)", options,
+            scr, "OpenCode 启动器 (oc-simple-starter)", options,
             lambda o, s: ("  ◆ 新建 session  — 选择工作目录开始" if o[1] == "new"
                           else "  ↺ 恢复 session  — 搜索并进入历史会话"),
             footer_hint=footer)
@@ -468,7 +468,7 @@ def cmd_tui(db_path):
 
 def main():
     _set_locale()
-    ap = argparse.ArgumentParser(prog="ocs", description="OpenCode 简易启动器 (oc-simple)")
+    ap = argparse.ArgumentParser(prog="ocs", description="OpenCode 简易启动器 (oc-simple-starter)")
     ap.add_argument("--version", action="version", version="ocs %s" % __version__)
     ap.add_argument("--db", default=os.environ.get("OC_SIMPLE_DB", DEFAULT_DB),
                     help="opencode.db 路径 (默认 ~/.local/share/opencode/opencode.db)")

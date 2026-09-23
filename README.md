@@ -1,6 +1,6 @@
 <div align="center">
 
-# oc-simple
+# oc-simple-starter
 
 **OpenCode 简易启动器 —— 系统文件选择器新建会话，跨项目搜索并恢复历史会话**
 
@@ -8,8 +8,8 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Python](https://img.shields.io/badge/python-3.8%2B-blue.svg)](pyproject.toml)
-[![CI](https://github.com/huangchen/oc-simple/actions/workflows/ci.yml/badge.svg)](https://github.com/huangchen/oc-simple/actions/workflows/ci.yml)
-[![Release](https://img.shields.io/github/v/release/huangchen/oc-simple)](https://github.com/huangchen/oc-simple/releases)
+[![CI](https://github.com/huangchen/oc-simple-starter/actions/workflows/ci.yml/badge.svg)](https://github.com/huangchen/oc-simple-starter/actions/workflows/ci.yml)
+[![Release](https://img.shields.io/github/v/release/huangchen/oc-simple-starter)](https://github.com/huangchen/oc-simple-starter/releases)
 
 纯 Python 标准库实现，单文件，零第三方依赖。
 
@@ -40,14 +40,14 @@
 
 ```bash
 # 方式一: 一键脚本 (macOS / Linux)
-curl -fsSL https://raw.githubusercontent.com/huangchen/oc-simple/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/huangchen/oc-simple-starter/main/install.sh | bash
 
 # 方式二: 从源码
-git clone https://github.com/huangchen/oc-simple.git
-cd oc-simple && ./install.sh
+git clone https://github.com/huangchen/oc-simple-starter.git
+cd oc-simple-starter && ./install.sh
 
 # 方式三: pipx (依赖 pyproject.toml, 自动创建隔离环境)
-pipx install git+https://github.com/huangchen/oc-simple.git
+pipx install git+https://github.com/huangchen/oc-simple-starter.git
 ```
 
 要求：Python ≥ 3.8、已安装 [OpenCode v2](https://opencode.ai)（`opencode --version` ≥ 2.x）。
@@ -60,7 +60,7 @@ ocs          # 交互界面
 ```
 
 ```
- OpenCode 启动器 (oc-simple)
+ OpenCode 启动器 (oc-simple-starter)
    ◆ 新建 session  — 选择工作目录开始
    ↺ 恢复 session  — 搜索并进入历史会话
  ↑↓/jk 选择  Enter 确认  Esc 退出   |   共 12 个 session
@@ -98,7 +98,7 @@ ocs --version
 - 只以**只读模式**打开 `~/.local/share/opencode/opencode.db`（OpenCode v2 的会话库），
   合并 `session_v2` 与遗留 `session` 表并去重，排除子会话与已归档会话 —— 与 OpenCode
   自身的列表口径一致；不向 OpenCode 写入任何数据
-- 唯一的本地状态是 `~/.config/oc-simple/state.json`（记住上次工作目录）
+- 唯一的本地状态是 `~/.config/oc-simple-starter/state.json`（记住上次工作目录）
 - 启动即替换当前进程（`execvp`），退出 opencode 后终端干净如初
 
 ## 开发

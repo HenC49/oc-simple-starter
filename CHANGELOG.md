@@ -23,5 +23,5 @@
   可选 gh release 发布）、`install.sh` 用户安装脚本。
 - CI：GitHub Actions，Python 3.9–3.13 矩阵跑测试。
 
-[Unreleased]: https://github.com/huangchen/oc-simple/compare/v0.1.0...HEAD
-[0.1.0]: https://github.com/huangchen/oc-simple/releases/tag/v0.1.0
+[Unreleased]: https://github.com/huangchen/oc-simple-starter/compare/v0.1.0...HEAD
+[0.1.0]: https://github.com/huangchen/oc-simple-starter/releases/tag/v0.1.0

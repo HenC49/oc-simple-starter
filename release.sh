@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# oc-simple 维护者发布脚本
+# oc-simple-starter 维护者发布脚本
 #
 # 用法:
 #   ./release.sh                 # 默认 patch 版本号自增 (0.1.0 -> 0.1.1)
@@ -107,16 +107,16 @@ grep -q "^## \[v$NEW_VER\]" CHANGELOG.md || \
 
 git add -A
 git commit -qm "chore(release): v$NEW_VER"
-git tag -a "v$NEW_VER" -m "oc-simple v$NEW_VER"
+git tag -a "v$NEW_VER" -m "oc-simple-starter v$NEW_VER"
 
 # ---- 打包 ------------------------------------------------------------------
 
 say "生成发布包"
 mkdir -p dist
-rm -f "dist/oc-simple-$NEW_VER.tar.gz" "dist/oc-simple-$NEW_VER.zip" dist/sha256sums.txt
-git archive --format=tar.gz --prefix="oc-simple-$NEW_VER/" -o "dist/oc-simple-$NEW_VER.tar.gz" "v$NEW_VER"
-git archive --format=zip   --prefix="oc-simple-$NEW_VER/" -o "dist/oc-simple-$NEW_VER.zip"   "v$NEW_VER"
-(cd dist && shasum -a 256 "oc-simple-$NEW_VER.tar.gz" "oc-simple-$NEW_VER.zip" > sha256sums.txt)
+rm -f "dist/oc-simple-starter-$NEW_VER.tar.gz" "dist/oc-simple-starter-$NEW_VER.zip" dist/sha256sums.txt
+git archive --format=tar.gz --prefix="oc-simple-starter-$NEW_VER/" -o "dist/oc-simple-starter-$NEW_VER.tar.gz" "v$NEW_VER"
+git archive --format=zip   --prefix="oc-simple-starter-$NEW_VER/" -o "dist/oc-simple-starter-$NEW_VER.zip"   "v$NEW_VER"
+(cd dist && shasum -a 256 "oc-simple-starter-$NEW_VER.tar.gz" "oc-simple-starter-$NEW_VER.zip" > sha256sums.txt)
 ls -lh dist/
 
 # ---- 发布 ------------------------------------------------------------------
@@ -124,14 +124,14 @@ ls -lh dist/
 if [ "$PUBLISH" = 1 ]; then
   command -v gh >/dev/null 2>&1 || die "--publish 需要 gh CLI (https://cli.github.com), 或手动: git push origin main --follow-tags 后在 GitHub Releases 页面上传 dist/"
   say "推送到远端并创建 GitHub Release"
-  git remote get-url origin >/dev/null 2>&1 || die "未配置 origin 远端 (git remote add origin git@github.com:<owner>/oc-simple.git)"
+  git remote get-url origin >/dev/null 2>&1 || die "未配置 origin 远端 (git remote add origin git@github.com:<owner>/oc-simple-starter.git)"
   git push origin HEAD --follow-tags
   NOTES="$(mktemp)"
   trap 'rm -f "$NOTES"' EXIT
   # 从 CHANGELOG 提取当前版本段落作为 Release Notes, 失败则用占位
   awk "/^## \[v$NEW_VER\]/{flag=1;next} /^## \[/{flag=0} flag" CHANGELOG.md > "$NOTES" || true
-  [ -s "$NOTES" ] || echo "oc-simple v$NEW_VER" > "$NOTES"
-  gh release create "v$NEW_VER" dist/oc-simple-$NEW_VER.tar.gz dist/oc-simple-$NEW_VER.zip \
+  [ -s "$NOTES" ] || echo "oc-simple-starter v$NEW_VER" > "$NOTES"
+  gh release create "v$NEW_VER" dist/oc-simple-starter-$NEW_VER.tar.gz dist/oc-simple-starter-$NEW_VER.zip \
     --title "v$NEW_VER" --notes-file "$NOTES"
   say "已发布: $(git remote get-url origin)/releases/tag/v$NEW_VER"
 else
